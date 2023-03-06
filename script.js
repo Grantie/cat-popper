@@ -66,6 +66,7 @@ function autoClickerVerification() {
         }
         if (seconds <= 0) {
             clearInterval(autoClickerVerificationInterval);
+            document.querySelector(".autoClickerVerificationSeconds").innerHTML = "5";
             autoClickerVerificationClickDetectionActive = false;
             localStorage.setItem("autoClickerVerificationActive", false);
             document.querySelector(".autoClickerVerification").hidden = true;
