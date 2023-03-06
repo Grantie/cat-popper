@@ -19,7 +19,7 @@ document.querySelector(".restart").addEventListener("dblclick", (e) => {
 
 function down() {
     new Audio("pop.mp3").play();
-    document.querySelector(".popper").style.backgroundImage = 'url("op.png")';
+    document.querySelector(".popper").src = "op.png";
     var oldCount = parseInt(document.querySelector(".counter").innerHTML);
     var newCount = oldCount + 1;
     localStorage.setItem("count", newCount);
@@ -32,13 +32,13 @@ function down() {
         }, 5000);
     }
 
-    if (newCount.toString().endsWith("500")) {
+    if (newCount.toString().endsWith("500") || newCount.toString().endsWith("000")) {
         autoClickerVerification();
     }
 }
 
 function up() {
-    document.querySelector(".popper").style.backgroundImage = 'url("p.png")';
+    document.querySelector(".popper").src = "p.png";
 }
 
 document.addEventListener("contextmenu", (e) => {
@@ -54,10 +54,6 @@ document.addEventListener("click", (e) => {
         clearInterval(autoClickerVerificationInterval);
     }
 });
-
-if (autoClickerVerificationActive == true) {
-    autoClickerVerification();
-}
 
 function autoClickerVerification() {
     localStorage.setItem("autoClickerVerificationActive", true);
