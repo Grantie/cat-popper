@@ -49,6 +49,18 @@ body {
     }
 }
 
+.twitter {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    font-size: 50px;
+}
+
+.twitter a {
+    color: #00acee;
+    text-decoration: none;
+}
+
 .restart {
     position: fixed;
     right: 10px;
